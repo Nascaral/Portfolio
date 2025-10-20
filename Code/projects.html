@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Nasser Al Nasser</title>
+  <link rel="icon" href="data:," />
+  <style>
+    header, nav, main, section, article, footer { border: 1px solid #999; }
+    project-card { display:block; padding:8px; border:1px dashed #666; }
+  </style>
+  <script>/* placeholder */</script>
+</head>
+<body>
+  <header>
+    <h1>Projects</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="list">
+      <h2 id="list">Projects</h2>
+
+      <article aria-labelledby="p1">
+        <h3 id="p1">Marketplace Web App</h3>
+        <p>
+          Coordinated with group members to built the front end for a student marketplace, a campus-only site where only verified students and staff can list, browse, and trade second-hand items and services.
+        </p>
+        <project-card>
+          <p><strong>Result:</strong> A working Marketplace</p>
+        </project-card>
+      </article>
+
+      <article aria-labelledby="p2">
+        <h3 id="p2">Data-Leak Detection Algorithm</h3>
+        <p>Built and trained a simple supervised-learning model in Python (Scikit-learn) that flags code patterns linked to data leaks.</p>
+      </article>
+
+      <article aria-labelledby="p3">
+        <h3 id="p3">Automated Trading Bot</h3>
+        <p>I built an automated trading bot in Python that streams live market data through a pandas-based pipeline, engineers technical-indicator features, and feeds them into a lightweight scikit-learn model to predict short-term price moves; whenever the model’s confidence clears a set threshold, the bot places paper trades via an API.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mo Al Nasser</p>
+  </footer>
+</body>
+</html>
