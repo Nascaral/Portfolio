@@ -1,0 +1,42 @@
+:root {
+
+  color-scheme: light dark; 
+  --bg: #0b0d10;
+  --surface: #12161c;
+  --ink: #e7ebf1;
+  --muted: #a6adbb;
+  --accent-red: #ef4444;     
+  --accent-purple: #8b5cf6; 
+  --link: color-mix(in oklab, var(--accent-purple), white 12%);
+  --rail-w: 150px;
+  --content-max: 78rem;
+  --radius: 1rem;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --surface: #f6f7fb;
+    --ink: #0b0d10;
+    --muted: #4b5563;
+    --link: color-mix(in oklab, var(--accent-purple), black 10%);
+  }
+}
+
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+
+html:has(#theme-toggle:checked) {
+  --bg: #ffffff;
+  --surface: #f6f7fb;
+  --ink: #0b0d10;
+  --muted: #4b5563;
+  --link: color-mix(in oklab, var(--accent-purple), black 10%);
+}

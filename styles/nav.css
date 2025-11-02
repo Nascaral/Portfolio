@@ -1,0 +1,135 @@
+.frame {
+  display: grid;
+  grid-template-columns: var(--rail-w) minmax(0, 1fr) var(--rail-w);
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.rail {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1.25rem;
+  z-index: 10;
+}
+
+.content {
+  overflow-y: auto;
+  width: min(100% - 2rem, var(--content-max));
+  margin-inline: auto;
+  padding: clamp(1rem, 3dvw, 2rem) 1rem;
+}
+
+.rail--nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-block: .75rem;
+}
+
+.brand {
+  display: grid;
+  grid-template-rows: auto auto;
+  place-items: center;
+  gap: .75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand__logo { inline-size: 72px; block-size: 72px; border-radius: 999px; }
+
+.brand__text { display: flex; gap: .6rem; align-items: center; }
+
+.brand__name,
+.brand__role {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  line-height: 1;
+}
+
+.brand__name {
+  font-weight: 900;
+  font-size: clamp(1.15rem, .5rem + 3.6vw, 2.6rem);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.brand__role {
+  font-weight: 700;
+  font-size: clamp(.7rem, .45rem + 1.1vw, 1rem);
+  letter-spacing: .22em;
+  color: var(--muted);
+}
+
+.theme-toggle {
+  align-self: center;
+  margin: .25rem 0 .75rem;
+  padding: .4em .65em;
+  border-radius: .6rem;
+  background: color-mix(in oklab, var(--surface), white 6%);
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.vnav {
+  display: grid;
+  place-items: center;
+  gap: .75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vnav a {
+  display: inline-block;
+  padding: .6em .9em;
+  border-radius: .8rem;
+  font-weight: 600;
+  font-size: clamp(.95rem, .8rem + .6vw, 1.15rem);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease;
+  background: transparent;
+}
+
+.vnav a:hover,
+.vnav a:focus-visible {
+  transform: translateY(-1px);
+  background: color-mix(in oklab, var(--accent-purple), black 80%);
+  color: #fff;
+}
+
+.vnav a[aria-current="page"] {
+  background: color-mix(in oklab, var(--accent-purple), black 70%);
+  color: #fff;
+}
+
+@media (max-width: 820px) {
+  .frame {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .rail--brand {
+    grid-row: 1;
+    grid-column: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 1rem;
+  }
+
+  .brand__logo { inline-size: 56px; block-size: 56px; }
+  .brand__text { gap: .5rem; }
+  .brand__name, .brand__role { writing-mode: horizontal-tb; transform: none; }
+  .brand__name { letter-spacing: .06em; }
+  .brand__role { letter-spacing: .1em; }
+
+  .rail--nav { grid-row: 3; grid-column: 1; }
+  .vnav { grid-auto-flow: column; gap: .9rem; padding-block: .6rem; justify-content: center; }
+}

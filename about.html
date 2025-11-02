@@ -5,27 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Nasser Al Nasser</title>
   <link rel="icon" href="data:," />
-  <style>
-    header, nav, main, section, footer { border: 1px solid #999; }
-    project-card { display:block; padding:8px; border:1px dashed #666; }
-  </style>
   <script>/* analytics placeholder */</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="/styles/theme.css">
+<link rel="stylesheet" href="/styles/nav.css">
 </head>
-<body>
-  <header>
+
+<body class="frame">
+  
+
+
+  <!-- Left Rail-->
+<aside class="rail rail--brand" aria-label="Brand">
+  <a class="brand" href="index.html">
+    <img class="brand__logo" src="images/placeholder-logo.svg" alt="">
+    <span class="brand__text">
+      <span class="brand__name">NASSER AL NASSER</span>
+      <span class="brand__role">SOFTWARE ENGINEER</span>
+    </span>
+  </a>
+</aside>
+
+
+
+  <main class="content" id="main-content">
+      <header>
     <h1>About</h1>
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experiments.html">Experiments</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main>
     <section aria-labelledby="bio">
       <h2 id="bio">Short Bio</h2>
       <p>
@@ -62,10 +70,30 @@
       <h3>Mission</h3>
       <p>Creating Solutions for problems and improving user experience</p>
     </project-card>
-  </main>
 
-  <footer>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime hic adipisci labore necessitatibus est, quia eligendi mollitia facilis recusandae sunt praesentium unde inventore, cupiditate fuga animi omnis, corrupti fugiat nemo!</p>
+      <footer>
     <p>&copy; 2025 Nasser Al Nasser</p>
   </footer>
+
+  </main>
+  
+
+<!-- RIGHT RAIL -->
+<nav class="rail rail--nav" aria-label="Primary">
+  <!-- Theme toggle -->
+  <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">☀︎/☾</label>
+  <input hidden type="checkbox" id="theme-toggle" aria-label="Toggle light or dark theme">
+
+  <ul class="vnav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" aria-current="page">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+
+
 </body>
 </html>
