@@ -6,70 +6,82 @@
   <title>Projects — Nasser Al Nasser</title>
   <link rel="icon" href="data:," />
   <script>/* placeholder */</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
-<link rel="stylesheet" href="/styles/theme.css">
-<link rel="stylesheet" href="/styles/nav.css">
-
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="/styles/theme.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/projects.css">
 </head>
-<body class="frame">
 
-    <!-- LEFT RAIL -->
-<aside class="rail rail--brand" aria-label="Brand">
-  <a class="brand" href="index.html">
-    <img class="brand__logo" src="images/placeholder-logo.svg" alt="">
-    <span class="brand__text">
-      <span class="brand__name">NASSER AL NASSER</span>
-      <span class="brand__role">SOFTWARE ENGINEER</span>
-    </span>
-  </a>
-</aside>
+<body class="frame">
+  <!-- LEFT RAIL -->
+  <aside class="rail rail--brand" aria-label="Brand">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="images/placeholder-logo.svg" alt="">
+      <span class="brand__text">
+        <span class="brand__name">NASSER AL NASSER</span>
+        <span class="brand__role">SOFTWARE ENGINEER</span>
+      </span>
+    </a>
+  </aside>
 
   <main class="content" id="main-content">
-      <header>
-    <h1>Projects</h1>
-      </header>
-    <section aria-labelledby="list">
+    <header class="page-header">
+      <h1>Projects</h1>
+    </header>
+    
+    <section class="projects-list" aria-labelledby="list">
       <h2 id="list">Projects</h2>
 
-      <article aria-labelledby="p1">
-        <h3 id="p1">Marketplace Web App</h3>
-        <p>
-          Coordinated with group members to built the front end for a student marketplace, a campus-only site where only verified students and staff can list, browse, and trade second-hand items and services.
-        </p>
-        <project-card>
-          <p><strong>Result:</strong> A working Marketplace</p>
-        </project-card>
+      <article class="project-card project-card--marketplace" aria-labelledby="p1">
+        <div class="project-number">01</div>
+        <div class="project-content">
+          <h3 id="p1">Marketplace Web App</h3>
+          <p class="project-description">
+            Coordinated with group members to built the front end for a student marketplace, a campus-only site where only verified students and staff can list, browse, and trade second-hand items and services.
+          </p>
+          <project-card class="project-result">
+            <p><strong>Result:</strong> A working Marketplace</p>
+          </project-card>
+        </div>
       </article>
 
-      <article aria-labelledby="p2">
-        <h3 id="p2">Data-Leak Detection Algorithm</h3>
-        <p>Built and trained a simple supervised-learning model in Python (Scikit-learn) that flags code patterns linked to data leaks.</p>
+      <article class="project-card project-card--detection" aria-labelledby="p2">
+        <div class="project-number">02</div>
+        <div class="project-content">
+          <h3 id="p2">Data-Leak Detection Algorithm</h3>
+          <p class="project-description">
+            Built and trained a simple supervised-learning model in Python (Scikit-learn) that flags code patterns linked to data leaks.
+          </p>
+        </div>
       </article>
 
-      <article aria-labelledby="p3">
-        <h3 id="p3">Automated Trading Bot</h3>
-        <p>I built an automated trading bot in Python that streams live market data through a pandas-based pipeline, engineers technical-indicator features, and feeds them into a lightweight scikit-learn model to predict short-term price moves; whenever the model’s confidence clears a set threshold, the bot places paper trades via an API.</p>
+      <article class="project-card project-card--trading" aria-labelledby="p3">
+        <div class="project-number">03</div>
+        <div class="project-content">
+          <h3 id="p3">Automated Trading Bot</h3>
+          <p class="project-description">
+            I built an automated trading bot in Python that streams live market data through a pandas-based pipeline, engineers technical-indicator features, and feeds them into a lightweight scikit-learn model to predict short-term price moves; whenever the model's confidence clears a set threshold, the bot places paper trades via an API.
+          </p>
+        </div>
       </article>
     </section>
     
-  <footer>
-    <p>&copy; 2025 Nasser Al Nasser</p>
-  </footer>
+    <footer class="page-footer">
+      <p>&copy; 2025 Nasser Al Nasser</p>
+    </footer>
   </main>
 
   <!-- Right Rail -->
   <nav class="rail rail--nav" aria-label="Primary">
-
-      <!-- Theme toggle -->
-  <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">☀︎/☾</label>
-  <input hidden type="checkbox" id="theme-toggle" aria-label="Toggle light or dark theme">
-  
+    <!-- Theme toggle -->
+    <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">☀︎/☾</label>
+    <input hidden type="checkbox" id="theme-toggle" aria-label="Toggle light or dark theme">
+    
     <ul class="vnav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html"  aria-current="page">Projects</a></li>
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
