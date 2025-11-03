@@ -1,13 +1,16 @@
+html, body { height: 100%; }
+body { margin: 0; overflow-y: auto; }
+
 .frame {
   display: grid;
   grid-template-columns: var(--rail-w) minmax(0, 1fr) var(--rail-w);
-  height: 100dvh;
-  overflow: hidden;
+  min-height: 100dvh;
 }
 
 .rail {
   position: sticky;
   top: 0;
+  align-self: start;
   height: 100dvh;
   background: var(--bg);
   display: flex;
@@ -17,8 +20,11 @@
   z-index: 10;
 }
 
+.frame > :nth-child(2) {
+  min-width: 0;
+}
+
 .content {
-  overflow-y: auto;
   width: min(100% - 2rem, var(--content-max));
   margin-inline: auto;
   padding: clamp(1rem, 3dvw, 2rem) 1rem;
@@ -114,11 +120,14 @@
   .frame {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
   }
 
   .rail--brand {
     grid-row: 1;
     grid-column: 1;
+    position: sticky;
+    top: 0;
     flex-direction: row;
     justify-content: space-between;
     padding-inline: 1rem;
@@ -130,6 +139,13 @@
   .brand__name { letter-spacing: .06em; }
   .brand__role { letter-spacing: .1em; }
 
-  .rail--nav { grid-row: 3; grid-column: 1; }
+  .rail--nav {
+    grid-row: 3;
+    grid-column: 1;
+    position: sticky;
+    bottom: 0;
+    height: auto;
+  }
+
   .vnav { grid-auto-flow: column; gap: .9rem; padding-block: .6rem; justify-content: center; }
 }

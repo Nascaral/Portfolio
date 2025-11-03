@@ -1,0 +1,257 @@
+
+.contact-section {
+  max-inline-size: 48rem;
+  margin-inline: auto;
+}
+
+.contact-form {
+  background: var(--surface, #12161c);
+  border: 1px solid var(--border, rgba(231, 235, 241, 0.15));
+  border-radius: var(--radius, 1rem);
+  padding: var(--spacing-xl, 3rem);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInScale 0.6s ease-out;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 4px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-red));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-slow, 350ms) ease;
+  }
+  
+  &:focus-within::before {
+    transform: scaleX(1);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-end: -10rem;
+    inset-inline-end: -10rem;
+    inline-size: 20rem;
+    block-size: 20rem;
+    background: radial-gradient(circle, 
+      color-mix(in oklab, var(--accent-purple), transparent 90%) 0%, 
+      transparent 70%);
+    pointer-events: none;
+    animation: rotate 20s linear infinite;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.form-legend {
+  font-size: clamp(var(--font-xl, 1.25rem), 2vw, var(--font-2xl, 1.5rem));
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-block-end: var(--spacing-lg, 2rem);
+}
+
+.form-group {
+  margin-block-end: var(--spacing-lg, 2rem);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-weight: 700;
+  font-size: var(--font-base, 1rem);
+  margin-block-end: var(--spacing-xs, 0.5rem);
+  color: var(--ink, #e7ebf1);
+  transition: color var(--transition-fast, 150ms) ease;
+}
+
+.form-group:focus-within .form-label {
+  color: var(--accent-purple, #8b5cf6);
+}
+
+.form-input,
+.form-textarea {
+  inline-size: 100%;
+  padding: var(--spacing-md, 1.5rem);
+  border: 2px solid var(--border, rgba(231, 235, 241, 0.15));
+  border-radius: var(--radius-sm, 0.5rem);
+  background: var(--bg, #0b0d10);
+  color: var(--ink, #e7ebf1);
+  font-family: inherit;
+  font-size: var(--font-base, 1rem);
+  transition: all var(--transition-base, 250ms) ease;
+  
+  &::placeholder {
+    color: var(--muted, #a6adbb);
+    opacity: 0.6;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: var(--accent-purple, #8b5cf6);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-purple), transparent 90%);
+    background: color-mix(in oklab, var(--bg), var(--accent-purple) 3%);
+    transform: translateY(-2px);
+  }
+  
+  &:hover:not(:focus) {
+    border-color: color-mix(in oklab, var(--border), var(--accent-purple) 30%);
+  }
+}
+
+.form-textarea {
+  resize: vertical;
+  min-block-size: 10rem;
+  line-height: 1.6;
+}
+
+.form-actions {
+  margin-block-start: var(--spacing-xl, 3rem);
+  display: flex;
+  justify-content: center;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs, 0.5rem);
+  padding: var(--spacing-md, 1.5rem) var(--spacing-xl, 3rem);
+  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-red) 100%);
+  color: white;
+  font-weight: 800;
+  font-size: var(--font-lg, 1.125rem);
+  border: none;
+  border-radius: var(--radius-sm, 0.5rem);
+  cursor: pointer;
+  transition: all var(--transition-base, 250ms) ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-purple) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-base, 250ms) ease;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px color-mix(in oklab, var(--accent-purple), transparent 70%);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+  
+  &:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px color-mix(in oklab, var(--accent-purple), transparent 70%);
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--accent-purple, #8b5cf6);
+    outline-offset: 4px;
+  }
+  
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.form-notice {
+  text-align: center;
+  margin-block-start: var(--spacing-md, 1.5rem);
+  padding: var(--spacing-sm, 1rem);
+  background: color-mix(in oklab, var(--accent-red), transparent 92%);
+  border: 1px dashed color-mix(in oklab, var(--accent-red), transparent 70%);
+  border-radius: var(--radius-sm, 0.5rem);
+  
+  & small {
+    color: var(--muted, #a6adbb);
+    font-size: var(--font-sm, 0.875rem);
+  }
+}
+
+.form-input:invalid:not(:placeholder-shown),
+.form-textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--accent-red, #ef4444);
+}
+
+.form-input:valid:not(:placeholder-shown),
+.form-textarea:valid:not(:placeholder-shown) {
+  border-color: color-mix(in oklab, var(--accent-purple), transparent 50%);
+}
+
+@media (max-width: 820px) {
+  .contact-form {
+    padding: var(--spacing-lg, 2rem);
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: var(--spacing-sm, 1rem);
+  }
+  
+  .btn-submit {
+    padding: var(--spacing-sm, 1rem) var(--spacing-lg, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: var(--spacing-md, 1.5rem);
+  }
+  
+  .form-legend {
+    font-size: var(--font-xl, 1.25rem);
+  }
+  
+  .form-group {
+    margin-block-end: var(--spacing-md, 1.5rem);
+  }
+  
+  .btn-submit {
+    inline-size: 100%;
+    padding: var(--spacing-md, 1.5rem);
+  }
+  
+  .form-actions {
+    margin-block-start: var(--spacing-lg, 2rem);
+  }
+}
