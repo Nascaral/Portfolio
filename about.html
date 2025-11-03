@@ -6,94 +6,78 @@
   <title>About — Nasser Al Nasser</title>
   <link rel="icon" href="data:," />
   <script>/* analytics placeholder */</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
-<link rel="stylesheet" href="/styles/theme.css">
-<link rel="stylesheet" href="/styles/nav.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="/styles/theme.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/about.css">
 </head>
 
 <body class="frame">
-  
-
-
   <!-- Left Rail-->
-<aside class="rail rail--brand" aria-label="Brand">
-  <a class="brand" href="index.html">
-    <img class="brand__logo" src="images/placeholder-logo.svg" alt="">
-    <span class="brand__text">
-      <span class="brand__name">NASSER AL NASSER</span>
-      <span class="brand__role">SOFTWARE ENGINEER</span>
-    </span>
-  </a>
-</aside>
-
-
+  <aside class="rail rail--brand" aria-label="Brand">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="images/placeholder-logo.svg" alt="">
+      <span class="brand__text">
+        <span class="brand__name">NASSER AL NASSER</span>
+        <span class="brand__role">SOFTWARE ENGINEER</span>
+      </span>
+    </a>
+  </aside>
 
   <main class="content" id="main-content">
-      <header>
-    <h1>About</h1>
-  </header>
+    <header class="page-header">
+      <h1>About</h1>
+    </header>
 
-    <section aria-labelledby="bio">
+    <section class="bio-section" aria-labelledby="bio">
       <h2 id="bio">Short Bio</h2>
-      <p>
+      <p class="bio-text">
         <strong>Nasser Al Nasser</strong> a <em>Web Developer</em>
         with experience personal and academic projects.
       </p>
-      <img src="https://via.placeholder.com/320x200.png?text=Profile" alt="Profile placeholder" />
+      <picture class="profile-picture">
+        <img src="https://via.placeholder.com/320x200.png?text=Profile" alt="Profile placeholder" />
+      </picture>
     </section>
 
-    <section aria-labelledby="skills">
+    <section class="skills-section" aria-labelledby="skills">
       <h2 id="skills">Skills</h2>
-      <ol>
-        <li>CSS</li>
-        <li>HTML</li>
-        <li>Javascript</li>
+      <ol class="skills-grid">
+        <li class="skill-item">CSS</li>
+        <li class="skill-item">HTML</li>
+        <li class="skill-item">Javascript</li>
       </ol>
-      <div>
-        <span>Resume: </span><a href="#">PDF (placeholder)</a>
+      <div class="resume-link">
+        <span>Resume: </span><a href="#" class="link-primary">PDF (placeholder)</a>
       </div>
     </section>
 
-    <section aria-labelledby="iframe">
-      <h2 id="iframe">Embedded Map (placeholder)</h2>
-      <iframe
-        title="Map placeholder"
-        src="about:blank"
-        width="400"
-        height="200"
-        loading="lazy">
-      </iframe>
-    </section>
-
-    <project-card>
+    <project-card class="mission-card">
       <h3>Mission</h3>
       <p>Creating Solutions for problems and improving user experience</p>
     </project-card>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime hic adipisci labore necessitatibus est, quia eligendi mollitia facilis recusandae sunt praesentium unde inventore, cupiditate fuga animi omnis, corrupti fugiat nemo!</p>
-      <footer>
-    <p>&copy; 2025 Nasser Al Nasser</p>
-  </footer>
-
+    <p class="about-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime hic adipisci labore necessitatibus est, quia eligendi mollitia facilis recusandae sunt praesentium unde inventore, cupiditate fuga animi omnis, corrupti fugiat nemo!</p>
+    
+    <footer class="page-footer">
+      <p>&copy; 2025 Nasser Al Nasser</p>
+    </footer>
   </main>
-  
 
-<!-- RIGHT RAIL -->
-<nav class="rail rail--nav" aria-label="Primary">
-  <!-- Theme toggle -->
-  <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">☀︎/☾</label>
-  <input hidden type="checkbox" id="theme-toggle" aria-label="Toggle light or dark theme">
+  <!-- RIGHT RAIL -->
+  <nav class="rail rail--nav" aria-label="Primary">
+    <!-- Theme toggle -->
+    <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">☀︎/☾</label>
+    <input hidden type="checkbox" id="theme-toggle" aria-label="Toggle light or dark theme">
 
-  <ul class="vnav">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" aria-current="page">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-
+    <ul class="vnav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
 </body>
 </html>

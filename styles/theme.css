@@ -1,7 +1,7 @@
 :root {
   color-scheme: light dark; 
   
-
+  /* Color palette using color-mix for wider gamut */
   --bg: #0b0d10;
   --surface: #12161c;
   --ink: #e7ebf1;
@@ -13,7 +13,7 @@
   --border: color-mix(in oklab, var(--ink), transparent 85%);
   --hover-bg: color-mix(in oklab, var(--surface), white 8%);
   
-
+  /* Layout variables with fallbacks */
   --rail-w: 150px;
   --content-max: 78rem;
   --radius: 1rem;
@@ -24,7 +24,7 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   
-
+  /* Typography scale */
   --font-base: 1rem;
   --font-sm: 0.875rem;
   --font-lg: 1.125rem;
@@ -32,7 +32,8 @@
   --font-2xl: 1.5rem;
   --font-3xl: 2rem;
   --font-4xl: 2.5rem;
-
+  
+  /* Animation variables */
   --transition-fast: 150ms;
   --transition-base: 250ms;
   --transition-slow: 350ms;
@@ -60,7 +61,7 @@ html:has(#theme-toggle:checked) {
   --hover-bg: color-mix(in oklab, var(--surface), black 5%);
 }
 
-
+/* Base styles */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -79,7 +80,7 @@ html, body {
   font-size: clamp(15px, 1vw, 18px);
 }
 
-
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-weight: 800;
@@ -145,7 +146,7 @@ small {
   color: var(--muted, #a6adbb);
 }
 
-
+/* Content sections */
 section {
   margin-block-end: var(--spacing-xl, 3rem);
   animation: fadeInUp var(--transition-slow, 350ms) ease-out;
@@ -177,6 +178,7 @@ footer {
   font-size: var(--font-sm, 0.875rem);
 }
 
+/* Custom project-card element */
 project-card {
   display: block;
   background: var(--surface, #12161c);
@@ -193,7 +195,7 @@ project-card {
   }
 }
 
-
+/* Article cards */
 article {
   background: var(--surface, #12161c);
   border: 1px solid var(--border, rgba(231, 235, 241, 0.15));
@@ -216,7 +218,7 @@ article {
   }
 }
 
-
+/* Lists */
 ul, ol {
   padding-inline-start: var(--spacing-md, 1.5rem);
   margin-block: var(--spacing-md, 1.5rem);
@@ -231,7 +233,7 @@ ul, ol {
   }
 }
 
-
+/* Images */
 img {
   max-inline-size: 100%;
   block-size: auto;
@@ -261,7 +263,7 @@ svg {
   block-size: auto;
 }
 
-
+/* Forms */
 form {
   background: var(--surface, #12161c);
   border: 1px solid var(--border, rgba(231, 235, 241, 0.15));
@@ -347,7 +349,7 @@ button {
   }
 }
 
-
+/* Iframe */
 iframe {
   inline-size: 100%;
   max-inline-size: 100%;
@@ -356,76 +358,7 @@ iframe {
   background: var(--surface, #12161c);
 }
 
-
-section:has(> h2#intro-title),
-section:has(> h2#featured-projects) {
-  position: relative;
-  padding: var(--spacing-lg, 2rem);
-  background: var(--surface, #12161c);
-  border-radius: var(--radius, 1rem);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(135deg, var(--accent-purple), var(--accent-red));
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0.3;
-    transition: opacity var(--transition-base, 250ms) ease;
-  }
-  
-  &:hover::before {
-    opacity: 0.5;
-  }
-}
-
-
-section:has(> h2#skills) ol {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  gap: var(--spacing-sm, 1rem);
-  list-style: none;
-  padding: 0;
-  
-  & li {
-    background: var(--surface, #12161c);
-    padding: var(--spacing-sm, 1rem);
-    border-radius: var(--radius-sm, 0.5rem);
-    border: 1px solid var(--border, rgba(231, 235, 241, 0.15));
-    text-align: center;
-    font-weight: 600;
-    transition: all var(--transition-base, 250ms) ease;
-    
-    &:hover {
-      border-color: var(--accent-purple, #8b5cf6);
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px color-mix(in oklab, var(--accent-purple), transparent 85%);
-    }
-  }
-}
-
-
-section:has(> h2#featured-projects) ul {
-  list-style: none;
-  padding: 0;
-  
-  & li {
-    position: relative;
-    padding-inline-start: var(--spacing-md, 1.5rem);
-    margin-block-end: var(--spacing-sm, 1rem);
-    
-    &::before {
-      content: '→';
-      position: absolute;
-      inset-inline-start: 0;
-      color: var(--accent-red, #ef4444);
-      font-weight: 700;
-    }
-  }
-}
-
-
+/* Noscript message */
 noscript {
   display: block;
   background: color-mix(in oklab, var(--accent-red), transparent 85%);
@@ -436,6 +369,7 @@ noscript {
   margin-block-end: var(--spacing-md, 1.5rem);
 }
 
+/* Responsive adjustments - Tablet */
 @media (max-width: 820px) {
   :root {
     --spacing-xl: 2rem;
@@ -457,13 +391,9 @@ noscript {
   article {
     padding: var(--spacing-md, 1.5rem);
   }
-  
-  section:has(> h2#skills) ol {
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-  }
 }
 
-
+/* Responsive adjustments - Mobile */
 @media (max-width: 480px) {
   :root {
     --spacing-xl: 1.5rem;
@@ -482,21 +412,9 @@ noscript {
   button {
     inline-size: 100%;
   }
-  
-  section:has(> h2#intro-title),
-  section:has(> h2#featured-projects) {
-    padding: var(--spacing-md, 1.5rem);
-  }
-  
-  section:has(> h2#skills) ol {
-    grid-template-columns: 1fr;
-  }
-  
-  form {
-    padding: var(--spacing-md, 1.5rem);
-  }
 }
 
+/* Print styles */
 @media print {
   .rail {
     display: none;
