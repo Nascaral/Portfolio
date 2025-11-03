@@ -4,89 +4,79 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nasser Al Nasser — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
-<link rel="stylesheet" href="/styles/theme.css">
-<link rel="stylesheet" href="/styles/nav.css">
-
-
-
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="/styles/theme.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <script>/* placeholder */</script>
 </head>
 
 <body class="frame">
   <noscript>This site works without JavaScript.</noscript>
 
-      <!-- LEFT RAIL -->
-<aside class="rail rail--brand" aria-label="Brand">
-  <a class="brand" href="index.html">
-    <img class="brand__logo" src="images/placeholder-logo.svg" alt="">
-    <span class="brand__text">
-      <span class="brand__name">NASSER AL NASSER</span>
-      <span class="brand__role">SOFTWARE ENGINEER</span>
-    </span>
-  </a>
-</aside>
+  <!-- LEFT RAIL -->
+  <aside class="rail rail--brand" aria-label="Brand">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="images/placeholder-logo.svg" alt="">
+      <span class="brand__text">
+        <span class="brand__name">NASSER AL NASSER</span>
+        <span class="brand__role">SOFTWARE ENGINEER</span>
+      </span>
+    </a>
+  </aside>
 
   <main class="content" id="main-content">
-      <header>
-    <h1>Nasser Al Nasser</h1>
-      </header>
-    <section aria-labelledby="intro-title">
+    <header class="page-header">
+      <h1 class="hero-title">Nasser Al Nasser</h1>
+    </header>
+    
+    <section class="intro-section" aria-labelledby="intro-title">
       <h2 id="intro-title">C.S. Student</h2>
-      <p>
-        <strong>Hello!</strong> I’m <b>Nasser</b>. I build scalable and maintainable web applications
+      <p class="intro-text">
+        <strong>Hello!</strong> I'm <b>Nasser</b>. I build scalable and maintainable web applications
         <em>Websites, Technologies</em><br>
-        <span>San Diego, CA</span>
+        <span class="location">San Diego, CA</span>
       </p>
 
-      <picture>
+      <picture class="hero-image">
         <source srcset="https://via.placeholder.com/960x360.webp?text=Hero+Blueprint" type="image/webp">
         <img src="https://via.placeholder.com/960x360.png?text=Hero+Blueprint" alt="Blueprint hero placeholder">
       </picture>
     </section>
 
-    <section aria-labelledby="featured-projects">
+    <section class="featured-section" aria-labelledby="featured-projects">
       <h2 id="featured-projects">Featured Projects</h2>
 
-      <article>
+      <article class="highlights-card">
         <h3>Three Highlights</h3>
-        <ul>
+        <ul class="project-list">
           <li><i>Marketplace Web App</i></li>
           <li><i>Data-Leak Detection Algorithm</i></li>
           <li><i>Automated Trading Bot</i></li>
         </ul>
       </article>
 
-      <project-card aria-label="Project Snapshot">
+      <project-card class="snapshot-card" aria-label="Project Snapshot">
         <strong>Project Snapshot</strong><br>
         <span>Simple box with a custom element for achievements.</span><br>
-        <button type="button">Details</button>
+        <button type="button" class="btn-primary">Details</button>
       </project-card>
     </section>
-
-    <section aria-labelledby="inline-svg">
-      <h2 id="inline-svg">Simple SVG</h2>
-      <svg width="160" height="60" role="img" aria-label="Simple line">
-        <line x1="10" y1="30" x2="150" y2="30" stroke="black"></line>
-      </svg>
-    </section>
     
-  <footer>
-    <p>&copy; 2025 Nasser Al Nasser — <span><a href="contact.html">Get in touch</a></span></p>
-  </footer>
+    <footer class="page-footer">
+      <p>&copy; 2025 Nasser Al Nasser — <span><a href="contact.html">Get in touch</a></span></p>
+    </footer>
   </main>
 
   <!-- Right Rail -->
   <nav class="rail rail--nav" aria-label="Primary">
-
-      <!-- Theme toggle -->
-  <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">☀︎/☾</label>
-  <input hidden type="checkbox" id="theme-toggle" aria-label="Toggle light or dark theme">
-  
+    <!-- Theme toggle -->
+    <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">☀︎/☾</label>
+    <input hidden type="checkbox" id="theme-toggle" aria-label="Toggle light or dark theme">
+    
     <ul class="vnav">
-      <li><a href="index.html"  aria-current="page">Home</a></li>
+      <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
