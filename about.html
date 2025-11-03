@@ -25,45 +25,127 @@
     </a>
   </aside>
 
-  <main class="content" id="main-content">
-    <header class="page-header">
-      <h1>About</h1>
-    </header>
+<main class="content" id="main-content">
+  <header class="page-header">
+    <h1>About</h1>
+    <p class="lede"><strong>Nasser Al Nasser</strong> — Software Engineer, maker-at-heart, and San Diego local.</p>
+  </header>
 
-    <section class="bio-section" aria-labelledby="bio">
-      <h2 id="bio">Short Bio</h2>
-      <p class="bio-text">
-        <strong>Nasser Al Nasser</strong> a <em>Web Developer</em>
-        with experience personal and academic projects.
-      </p>
-      <picture class="profile-picture">
-        <img src="https://via.placeholder.com/320x200.png?text=Profile" alt="Profile placeholder" />
-      </picture>
-    </section>
+  <section class="bio-section" aria-labelledby="bio">
+    <h2 id="bio">Short Bio</h2>
+    <p class="bio-text">
+      I'm <strong>Nasser</strong>, a UC San Diego–trained software engineer who loves building fast, accessible, and reliable web apps.
+      In my free time I code random tools—some solve real problems I run into, some are just for fun—and I run long distances to clear my head.
+      Before CS, I competed as an <em>Olympic boxer for Iraq</em>, which taught me discipline, resilience, and how to deliver under pressure.
+    </p>
+    <figure class="profile-picture">
+      <img src="https://via.placeholder.com/640x640.png?text=Portrait+Placeholder" alt="Portrait of Nasser Al Nasser" width="320" height="320" />
+      <figcaption>San Diego, CA · Available for Software Engineer roles</figcaption>
+    </figure>
+  </section>
 
-    <section class="skills-section" aria-labelledby="skills">
-      <h2 id="skills">Skills</h2>
-      <ol class="skills-grid">
-        <li class="skill-item">CSS</li>
-        <li class="skill-item">HTML</li>
-        <li class="skill-item">Javascript</li>
-      </ol>
-      <div class="resume-link">
-        <span>Resume: </span><a href="#" class="link-primary">PDF (placeholder)</a>
+  <section class="quick-facts" aria-labelledby="facts">
+    <h2 id="facts">Quick Facts</h2>
+    <ul class="facts-grid">
+      <li><strong>Location:</strong> San Diego, CA</li>
+      <li><strong>Education:</strong> UC San Diego — B.S. in Computer Science</li>
+      <li><strong>Focus:</strong> Web platforms, front-end performance, product engineering</li>
+      <li><strong>Interests:</strong> Building tools, running, boxing, systems design</li>
+      <li><strong>Languages:</strong> JavaScript/TypeScript, Python, C</li>
+      <li><strong>Open to:</strong> SWE, Front-end, Full-stack, Product Engineering</li>
+    </ul>
+  </section>
+
+  <section class="skills-section" aria-labelledby="skills">
+    <h2 id="skills">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <h3>Frontend</h3>
+        <ul class="stack-list">
+          <li>HTML · CSS · JS/TS</li>
+          <li>React · Web Components</li>
+          <li>Accessibility (WCAG) · Perf</li>
+        </ul>
       </div>
-    </section>
+      <div class="skill-block">
+        <h3>Backend</h3>
+        <ul class="stack-list">
+          <li>Node.js · Express</li>
+          <li>REST · Auth · Sessions</li>
+          <li>PostgreSQL · SQLite</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3>Data & ML</h3>
+        <ul class="stack-list">
+          <li>Python · Pandas</li>
+          <li>scikit-learn (basics)</li>
+          <li>ETL pipelines</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3>DevOps & QA</h3>
+        <ul class="stack-list">
+          <li>Git · GitHub Actions</li>
+          <li>Vite · Vitest · Jest</li>
+          <li>Docker (intro) · CI/CD</li>
+        </ul>
+      </div>
+    </div>
+    <div class="resume-link">
+      <span>Resume: </span>
+      <a href="[link-to-resume.pdf]" class="link-primary" download>Download PDF</a>
+      <span aria-hidden="true"> · </span>
+      <a href="[link-to-resume-view]" class="link-primary">View Online</a>
+    </div>
+  </section>
 
-    <project-card class="mission-card">
-      <h3>Mission</h3>
-      <p>Creating Solutions for problems and improving user experience</p>
-    </project-card>
+  <project-card class="mission-card">
+    <h3>Mission</h3>
+    <p>Creating practical, accessible, and high-impact solutions inspired by real-world challenges. My work is driven by the belief that innovation often begins where affordability and availability fall short. I strive to design and build technology that bridges those gaps — tools and applications that are intuitive, scalable, and meaningful in everyday life.</p>
+  </project-card>
 
-    <p class="about-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime hic adipisci labore necessitatibus est, quia eligendi mollitia facilis recusandae sunt praesentium unde inventore, cupiditate fuga animi omnis, corrupti fugiat nemo!</p>
-    
-    <footer class="page-footer">
-      <p>&copy; 2025 Nasser Al Nasser</p>
-    </footer>
-  </main>
+  <section class="experience-section" aria-labelledby="xp">
+    <h2 id="xp">Experience Highlights</h2>
+    <ul class="xp-list">
+      <li>
+        <strong>Student Marketplace — UCSD</strong> · Front-end lead
+        <ul>
+          <li>Implemented auth-gated listings and performant search; reduced TTI on listing pages to &lt;1.2s (placeholder metric).</li>
+          <li>Shipped component library with accessible patterns (modals, toasts, menus).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Data-Leak Detection (Research)</strong> · ML prototype
+        <ul>
+          <li>Built supervised model to flag risky patterns; improved precision over baseline by <span class="metric">+12%</span></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Automated Trading Bot</strong> · Python
+        <ul>
+          <li>Streaming pipeline, feature engineering, paper trading via API; safe-guarded with risk limits.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="values-section" aria-labelledby="values">
+    <h2 id="values">Principles I Work By</h2>
+    <ol class="principles">
+      <li><strong>Users over ego:</strong> Decisions driven by data and feedback.</li>
+      <li><strong>Accessibility by default:</strong> If everyone can’t use it, it’s not done.</li>
+      <li><strong>Performance is UX:</strong> Budgets, measurements, and profiling from day one.</li>
+      <li><strong>Reliability:</strong> Tests and monitoring guard the product, not just the code.</li>
+    </ol>
+  </section>
+
+  <footer class="page-footer">
+    <p>&copy; 2025 Nasser Al Nasser — <span><a href="contact.html">Get in touch</a></span></p>
+  </footer>
+</main>
+
+
 
   <!-- RIGHT RAIL -->
   <nav class="rail rail--nav" aria-label="Primary">

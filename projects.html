@@ -25,52 +25,143 @@
     </a>
   </aside>
 
-  <main class="content" id="main-content">
-    <header class="page-header">
-      <h1>Projects</h1>
-    </header>
-    
-    <section class="projects-list" aria-labelledby="list">
-      <h2 id="list">Projects</h2>
+<main class="content" id="main-content">
+  <header class="page-header">
+    <h1>Projects</h1>
+    <p class="lede">A mix of shipped apps, research prototypes, and weekend experiments.</p>
+  </header>
 
-      <article class="project-card project-card--marketplace" aria-labelledby="p1">
-        <div class="project-number">01</div>
-        <div class="project-content">
-          <h3 id="p1">Marketplace Web App</h3>
-          <p class="project-description">
-            Coordinated with group members to built the front end for a student marketplace, a campus-only site where only verified students and staff can list, browse, and trade second-hand items and services.
-          </p>
-          <project-card class="project-result">
-            <p><strong>Result:</strong> A working Marketplace</p>
-          </project-card>
-        </div>
-      </article>
+  <section class="projects-filters" aria-label="Filters">
+    <ul class="tags">
+      <li><button type="button">All</button></li>
+      <li><button type="button">Frontend</button></li>
+      <li><button type="button">Full-stack</button></li>
+      <li><button type="button">Data/ML</button></li>
+      <li><button type="button">Experiments</button></li>
+    </ul>
+  </section>
 
-      <article class="project-card project-card--detection" aria-labelledby="p2">
-        <div class="project-number">02</div>
-        <div class="project-content">
-          <h3 id="p2">Data-Leak Detection Algorithm</h3>
-          <p class="project-description">
-            Built and trained a simple supervised-learning model in Python (Scikit-learn) that flags code patterns linked to data leaks.
-          </p>
-        </div>
-      </article>
+  <section class="projects-list" aria-labelledby="list">
+    <h2 id="list">Case Studies</h2>
 
-      <article class="project-card project-card--trading" aria-labelledby="p3">
-        <div class="project-number">03</div>
-        <div class="project-content">
-          <h3 id="p3">Automated Trading Bot</h3>
-          <p class="project-description">
-            I built an automated trading bot in Python that streams live market data through a pandas-based pipeline, engineers technical-indicator features, and feeds them into a lightweight scikit-learn model to predict short-term price moves; whenever the model's confidence clears a set threshold, the bot places paper trades via an API.
-          </p>
-        </div>
-      </article>
-    </section>
-    
-    <footer class="page-footer">
-      <p>&copy; 2025 Nasser Al Nasser</p>
-    </footer>
-  </main>
+    <article class="project-card project-card--marketplace" aria-labelledby="p1">
+      <div class="project-number">01</div>
+      <div class="project-content">
+        <h3 id="p1">Marketplace Web App</h3>
+        <p class="project-description">
+          A campus-only marketplace for verified UCSD students and staff to list, browse, and trade second-hand items and services.
+        </p>
+        <dl class="project-meta">
+          <dt>Role</dt><dd>Front-end lead, A11y & performance</dd>
+          <dt>Stack</dt><dd>Web Components, JS/TS, CSS, Vite</dd>
+          <dt>Impact</dt><dd>&lt;1.2s listing TTI (placeholder), keyboard-navigable flows</dd>
+        </dl>
+        <project-card class="project-result">
+          <p><strong>Result:</strong> Shipped MVP with auth-gated listings, search, and moderation tools.</p>
+        </project-card>
+
+        <details class="case-notes">
+          <summary>What I did</summary>
+          <ul>
+            <li>Built component library (modal, menu, toast, form controls) with focus management.</li>
+            <li>Implemented search with debounced client-side filtering and empty-state UX.</li>
+            <li>Added performance budgets and Lighthouse checks in CI.</li>
+          </ul>
+        </details>
+      </div>
+    </article>
+
+    <article class="project-card project-card--detection" aria-labelledby="p2">
+      <div class="project-number">02</div>
+      <div class="project-content">
+        <h3 id="p2">Data-Leak Detection Algorithm</h3>
+        <p class="project-description">
+          Supervised model in Python that flags code patterns linked to potential data leaks.
+        </p>
+        <dl class="project-meta">
+          <dt>Role</dt><dd>Research & prototyping</dd>
+          <dt>Stack</dt><dd>Python, Pandas, scikit-learn</dd>
+          <dt>Impact</dt><dd>Improved baseline precision by <span class="metric">+12%</span></dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="project-card project-card--trading" aria-labelledby="p3">
+      <div class="project-number">03</div>
+      <div class="project-content">
+        <h3 id="p3">Automated Trading Bot</h3>
+        <p class="project-description">
+          Streaming market data into a feature-engineered pipeline with model-driven signals, paper trades, and basic risk limits.
+        </p>
+        <dl class="project-meta">
+          <dt>Role</dt><dd>Engineer</dd>
+          <dt>Stack</dt><dd>Python, Pandas, scikit-learn, REST API</dd>
+          <dt>Notes</dt><dd>Paper trading only; safe defaults and circuit-breakers</dd>
+        </dl>
+      </div>
+    </article>
+  </section>
+
+  <section class="spotlight" aria-labelledby="spotlight">
+    <h2 id="spotlight">Project Spotlight: Marketplace</h2>
+    <div class="spotlight-grid">
+      <figure class="spotlight-figure">
+        <img src="https://via.placeholder.com/960x540.png?text=Marketplace+Screens" alt="Screens from Marketplace app">
+        <figcaption>Authentication, search, and listing flows</figcaption>
+      </figure>
+      <div class="spotlight-notes">
+        <h3>Problem</h3>
+        <p>Students lacked a safe, campus-verified place to exchange items and services.</p>
+        <h3>Outcome</h3>
+        <ul>
+          <li>Verified access, clean UX, and moderation tools.</li>
+          <li>Performance budget maintained across releases.</li>
+        </ul>
+        <h3>What I learned</h3>
+        <ul>
+          <li>Building accessible components early reduces rework.</li>
+          <li>Perf budgets + CI guardrails keep apps fast.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="extras" aria-labelledby="extras">
+    <h2 id="extras">Fun Builds & Experiments</h2>
+    <ul class="grid-cards">
+      <li>
+        <project-card>
+          <strong>RunTracker CLI</strong>
+          <p>Small CLI to log runs and surface weekly trends.</p>
+        </project-card>
+      </li>
+      <li>
+        <project-card>
+          <strong>Tab Tidy</strong>
+          <p>Browser userscript that groups tabs and saves memory.</p>
+        </project-card>
+      </li>
+      <li>
+        <project-card>
+          <strong>Image Diff Tool</strong>
+          <p>Quick visual diff for UI regression checks.</p>
+        </project-card>
+      </li>
+      <li>
+        <project-card>
+          <strong>Boxer’s Timer</strong>
+          <p>Rounds, rest, and audio cues—tuned for roadwork.</p>
+        </project-card>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="page-footer">
+    <p>&copy; 2025 Nasser Al Nasser — <span><a href="contact.html">Get in touch</a></span></p>
+  </footer>
+</main>
+
+
 
   <!-- Right Rail -->
   <nav class="rail rail--nav" aria-label="Primary">
