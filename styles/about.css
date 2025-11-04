@@ -1,215 +1,472 @@
-/* About Page Specific Styles */
+/* About Page - Personal Brand Showcase */
 
+/* Bio Section - Holographic Card */
 .bio-section {
   display: grid;
-  gap: var(--spacing-lg, 2rem);
-  padding: var(--spacing-lg, 2rem);
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
   background: linear-gradient(135deg, 
-    color-mix(in oklab, var(--accent-purple), transparent 94%) 0%, 
-    color-mix(in oklab, var(--accent-blue), transparent 94%) 100%);
-  border-radius: var(--radius, 1rem);
-  border: 1px solid var(--border, rgba(231, 235, 241, 0.15));
-  position: relative;
-  overflow: hidden;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    inset-block-end: -50%;
-    inset-inline-end: -20%;
-    inline-size: 40%;
-    block-size: 100%;
-    background: radial-gradient(circle, 
-      color-mix(in oklab, var(--accent-purple), transparent 85%) 0%, 
-      transparent 70%);
-    pointer-events: none;
-    animation: float 6s ease-in-out infinite;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-1rem) rotate(5deg);
-  }
-}
-
-.bio-text {
-  font-size: clamp(var(--font-base, 1rem), 1.5vw, var(--font-lg, 1.125rem));
-  line-height: 1.8;
-  position: relative;
-  z-index: 1;
-}
-
-.profile-picture {
-  display: grid;
-  place-items: center;
-  position: relative;
-  z-index: 1;
-  
-  & img {
-    inline-size: 100%;
-    max-inline-size: 320px;
-    block-size: auto;
-    border-radius: var(--radius, 1rem);
-    box-shadow: 0 8px 32px color-mix(in oklab, var(--accent-purple), transparent 80%);
-    border: 2px solid color-mix(in oklab, var(--accent-purple), transparent 60%);
-    transition: all var(--transition-slow, 350ms) ease;
-    
-    &:hover {
-      transform: scale(1.05) rotate(-2deg);
-      box-shadow: 0 12px 48px color-mix(in oklab, var(--accent-purple), transparent 70%);
-    }
-  }
-}
-
-.skills-section {
-  padding: var(--spacing-lg, 2rem);
-  background: var(--surface, #12161c);
-  border-radius: var(--radius, 1rem);
-  border: 1px solid var(--border, rgba(231, 235, 241, 0.15));
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: var(--spacing-md, 1.5rem);
-  list-style: none;
-  padding: 0;
-  margin-block-end: var(--spacing-lg, 2rem);
-}
-
-.skill-item {
-  background: linear-gradient(135deg, 
-    color-mix(in oklab, var(--accent-purple), transparent 85%) 0%, 
-    color-mix(in oklab, var(--accent-red), transparent 85%) 100%);
-  padding: var(--spacing-md, 1.5rem);
-  border-radius: var(--radius-sm, 0.5rem);
-  border: 1px solid color-mix(in oklab, var(--accent-purple), transparent 70%);
-  text-align: center;
-  font-weight: 700;
-  font-size: var(--font-lg, 1.125rem);
-  transition: all var(--transition-base, 250ms) ease;
+    color-mix(in oklab, var(--accent-purple), transparent 93%) 0%, 
+    color-mix(in oklab, var(--accent-cyan), transparent 95%) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   position: relative;
   overflow: hidden;
   
   &::before {
     content: '';
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: -100%;
+    inset: -200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      color-mix(in oklab, var(--accent-purple), transparent 70%) 30deg,
+      transparent 60deg,
+      color-mix(in oklab, var(--accent-cyan), transparent 70%) 180deg,
+      transparent 210deg
+    );
+    animation: rotate 8s linear infinite;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--bg);
+    border-radius: inherit;
+    z-index: 0;
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bio-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bio-text {
+  font-size: clamp(var(--font-base), 1.5vw, var(--font-lg));
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+/* Profile Picture - 3D Hover */
+.profile-picture {
+  display: grid;
+  place-items: center;
+  
+  & img {
     inline-size: 100%;
-    block-size: 100%;
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      color-mix(in oklab, var(--accent-purple), transparent 70%) 50%, 
-      transparent 100%);
-    transition: inset-inline-start var(--transition-slow, 350ms) ease;
+    max-inline-size: 320px;
+    block-size: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 3px solid var(--border);
+    box-shadow: 0 12px 48px color-mix(in oklab, var(--accent-purple), transparent 80%);
+    transition: all var(--transition-slow) ease;
+    transform-style: preserve-3d;
+    
+    &:hover {
+      transform: perspective(1000px) rotateY(10deg) rotateX(-5deg) scale(1.05);
+      box-shadow: 0 20px 80px color-mix(in oklab, var(--accent-purple), transparent 60%);
+      border-color: var(--accent-purple);
+    }
+  }
+  
+  & figcaption {
+    margin-block-start: var(--spacing-md);
+    font-size: var(--font-sm);
+    color: var(--muted);
+    font-weight: 500;
+  }
+}
+
+/* Quick Facts Grid */
+.quick-facts {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 4px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan), var(--accent-pink));
+    background-size: 200% 100%;
+    animation: slideGradient 3s ease infinite;
+  }
+}
+
+@keyframes slideGradient {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+}
+
+.facts-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  
+  & li {
+    padding: var(--spacing-md);
+    background: color-mix(in oklab, var(--surface-elevated), transparent 50%);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    transition: all var(--transition-base) ease;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+      border-radius: inherit;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity var(--transition-base) ease;
+    }
+    
+    &:hover {
+      transform: translateY(-4px);
+      border-color: transparent;
+      
+      &::before {
+        opacity: 1;
+      }
+    }
+    
+    & strong {
+      color: var(--accent-purple);
+      font-weight: 700;
+    }
+  }
+}
+
+/* Skills Section - Grid Layout */
+.skills-section {
+  padding: var(--spacing-xl);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block-end: -50%;
+    inset-inline-end: -20%;
+    inline-size: 60%;
+    block-size: 80%;
+    background: radial-gradient(circle, 
+      color-mix(in oklab, var(--accent-cyan), transparent 85%) 0%, 
+      transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.skills-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+  margin-block-end: var(--spacing-xl);
+}
+
+.skill-block {
+  background: color-mix(in oklab, var(--surface-elevated), transparent 30%);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-base) ease;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 0;
+    block-size: 3px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+    transition: inline-size var(--transition-base) ease;
   }
   
   &:hover {
-    border-color: var(--accent-purple, #8b5cf6);
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px color-mix(in oklab, var(--accent-purple), transparent 80%);
+    transform: translateY(-8px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 12px 40px color-mix(in oklab, var(--accent-purple), transparent 80%);
     
     &::before {
-      inset-inline-start: 100%;
+      inline-size: 100%;
+    }
+  }
+  
+  & h3 {
+    margin-block-start: 0;
+    margin-block-end: var(--spacing-md);
+    font-size: var(--font-xl);
+  }
+}
+
+.stack-list {
+  list-style: none;
+  padding: 0;
+  
+  & li {
+    padding: var(--spacing-xs) 0;
+    color: var(--muted);
+    font-size: var(--font-sm);
+    position: relative;
+    padding-inline-start: var(--spacing-md);
+    
+    &::before {
+      content: '✓';
+      position: absolute;
+      inset-inline-start: 0;
+      color: var(--accent-cyan);
+      font-weight: 700;
     }
   }
 }
 
 .resume-link {
-  padding: var(--spacing-md, 1.5rem);
-  background: var(--bg, #0b0d10);
-  border-radius: var(--radius-sm, 0.5rem);
-  border: 1px dashed var(--border, rgba(231, 235, 241, 0.15));
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--accent-purple), transparent 90%) 0%, 
+    color-mix(in oklab, var(--accent-cyan), transparent 92%) 100%);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
   text-align: center;
   
   & span {
-    color: var(--muted, #a6adbb);
-    margin-inline-end: var(--spacing-xs, 0.5rem);
+    color: var(--muted);
+    margin-inline-end: var(--spacing-xs);
   }
-}
-
-.link-primary {
-  font-weight: 700;
-  color: var(--accent-purple, #8b5cf6);
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
-  transition: all var(--transition-fast, 150ms) ease;
   
-  &:hover {
-    color: var(--accent-red, #ef4444);
-    text-decoration-thickness: 2px;
+  & .link-primary {
+    font-weight: 700;
+    color: var(--accent-purple);
+    text-decoration: none;
+    position: relative;
+    
+    &:hover {
+      color: var(--accent-cyan);
+    }
   }
 }
 
+/* Mission Card - Gradient Border */
 .mission-card {
-  background: linear-gradient(135deg, 
-    color-mix(in oklab, var(--accent-red), transparent 90%) 0%, 
-    color-mix(in oklab, var(--accent-purple), transparent 90%) 100%);
-  border: 1px solid color-mix(in oklab, var(--accent-red), transparent 70%);
+  background: var(--surface);
+  padding: var(--spacing-xl);
   text-align: center;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-purple), var(--accent-cyan));
+    border-radius: inherit;
+    z-index: -1;
+    background-size: 200% 200%;
+    animation: gradientMove 4s ease infinite;
+  }
   
   & h3 {
-    color: var(--accent-red, #ef4444);
-    font-size: var(--font-2xl, 1.5rem);
-    margin-block-end: var(--spacing-sm, 1rem);
+    font-size: var(--font-2xl);
+    margin-block-end: var(--spacing-md);
   }
   
   & p {
-    font-size: var(--font-lg, 1.125rem);
-    color: var(--ink, #e7ebf1);
+    font-size: var(--font-base);
+    line-height: 1.8;
+    color: var(--muted);
     margin: 0;
   }
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Experience Section */
+.experience-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+}
+
+.xp-list {
+  list-style: none;
+  padding: 0;
   
-  &:hover {
-    border-color: var(--accent-red, #ef4444);
-    box-shadow: 0 8px 24px color-mix(in oklab, var(--accent-red), transparent 85%);
+  & > li {
+    padding: var(--spacing-lg);
+    margin-block-end: var(--spacing-md);
+    background: color-mix(in oklab, var(--surface-elevated), transparent 50%);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    border-inline-start: 4px solid var(--accent-purple);
+    transition: all var(--transition-base) ease;
+    
+    &:hover {
+      border-inline-start-color: var(--accent-cyan);
+      transform: translateX(8px);
+      box-shadow: 0 8px 24px color-mix(in oklab, var(--accent-purple), transparent 85%);
+    }
+    
+    & strong {
+      font-size: var(--font-lg);
+      color: var(--ink);
+    }
+    
+    & ul {
+      margin-block-start: var(--spacing-sm);
+      padding-inline-start: var(--spacing-md);
+      
+      & li {
+        color: var(--muted);
+        font-size: var(--font-sm);
+      }
+    }
   }
 }
 
-.about-description {
-  padding: var(--spacing-lg, 2rem);
-  background: var(--surface, #12161c);
-  border-radius: var(--radius, 1rem);
-  border-inline-start: 4px solid var(--accent-purple, #8b5cf6);
-  color: var(--muted, #a6adbb);
-  line-height: 1.8;
-  font-size: var(--font-base, 1rem);
+.metric {
+  color: var(--accent-cyan);
+  font-weight: 700;
 }
 
-/* Responsive adjustments */
+/* Values Section */
+.values-section {
+  background: linear-gradient(135deg, 
+    color-mix(in oklab, var(--accent-purple), transparent 92%) 0%, 
+    color-mix(in oklab, var(--accent-cyan), transparent 94%) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-xl);
+}
+
+.principles {
+  list-style: none;
+  counter-reset: principle;
+  padding: 0;
+  display: grid;
+  gap: var(--spacing-md);
+  
+  & li {
+    counter-increment: principle;
+    padding: var(--spacing-lg);
+    padding-inline-start: 4rem;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    position: relative;
+    transition: all var(--transition-base) ease;
+    
+    &::before {
+      content: counter(principle);
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-start: var(--spacing-md);
+      transform: translateY(-50%);
+      inline-size: 2rem;
+      block-size: 2rem;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+      color: white;
+      font-weight: 800;
+      border-radius: 50%;
+      font-size: var(--font-sm);
+    }
+    
+    &:hover {
+      transform: translateX(8px);
+      border-color: var(--accent-purple);
+      box-shadow: 0 8px 24px color-mix(in oklab, var(--accent-purple), transparent 85%);
+    }
+    
+    & strong {
+      color: var(--accent-purple);
+    }
+  }
+}
+
+/* Responsive */
 @media (max-width: 820px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-    gap: var(--spacing-sm, 1rem);
+  .bio-section,
+  .skills-section,
+  .mission-card,
+  .values-section {
+    padding: var(--spacing-lg);
   }
   
-  .bio-section,
-  .skills-section {
-    padding: var(--spacing-md, 1.5rem);
-  }
-}
-
-@media (max-width: 480px) {
   .skills-grid {
     grid-template-columns: 1fr;
   }
   
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
   .bio-section,
   .skills-section,
-  .about-description {
-    padding: var(--spacing-sm, 1rem);
-  }
-  
-  .skill-item {
-    padding: var(--spacing-sm, 1rem);
+  .mission-card,
+  .values-section {
+    padding: var(--spacing-md);
   }
   
   .profile-picture img {
     max-inline-size: 100%;
+  }
+  
+  .skill-block {
+    padding: var(--spacing-md);
+  }
+  
+  .principles li {
+    padding-inline-start: 3rem;
+    
+    &::before {
+      inset-inline-start: var(--spacing-sm);
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+    }
   }
 }
