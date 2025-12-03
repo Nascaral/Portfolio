@@ -1,4 +1,3 @@
-
 .bio-section {
   display: grid;
   gap: var(--spacing-xl);
@@ -98,14 +97,16 @@
   50%      { background-position: 100% 0%; }
 }
 
+
 .facts-grid {
-  list-style: none;
-  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-md);
+  margin: 0;
+  padding: 0;
 }
-.facts-grid li {
+
+.fact-item {
   padding: var(--spacing-md);
   background: color-mix(in oklab, var(--surface-elevated), transparent 50%);
   border-radius: var(--radius-sm);
@@ -113,7 +114,7 @@
   transition: all var(--transition-base) ease;
   position: relative;
 }
-.facts-grid li::before {
+.fact-item::before {
   content: '';
   position: absolute;
   inset: -1px;
@@ -124,12 +125,26 @@
   transition: opacity var(--transition-base) ease;
   pointer-events: none;
 }
-.facts-grid li:hover {
+.fact-item:hover {
   transform: translateY(-4px);
   border-color: transparent;
 }
-.facts-grid li:hover::before { opacity: 1; }
-.facts-grid li strong { color: var(--accent-purple); font-weight: 700; }
+.fact-item:hover::before { opacity: 1; }
+
+.fact-item dt {
+  color: var(--accent-purple);
+  font-weight: 700;
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-block-end: var(--spacing-xs);
+}
+
+.fact-item dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--font-base);
+}
 
 
 .skills-section {
@@ -226,6 +241,11 @@
 .resume-link span { color: var(--muted); margin-inline-end: var(--spacing-xs); }
 .resume-link .link-primary:hover { color: var(--accent-cyan); }
 
+
+/* Mission section wrapper */
+.mission-section {
+  margin-block: var(--spacing-xl);
+}
 
 .mission-card {
   background: var(--surface);

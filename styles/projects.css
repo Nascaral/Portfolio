@@ -4,6 +4,7 @@
 .tags {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
   gap: var(--spacing-sm);
   flex-wrap: wrap;
@@ -29,8 +30,26 @@
   opacity: 0;
   transition: opacity var(--transition-base) ease;
 }
-.tags button:hover { color: white; border-color: transparent; transform: translateY(-2px); box-shadow: 0 4px 12px color-mix(in oklab, var(--accent-purple), transparent 80%); }
+.tags button:hover { 
+  color: white; 
+  border-color: transparent; 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 12px color-mix(in oklab, var(--accent-purple), transparent 80%); 
+}
 .tags button:hover::before { opacity: 1; }
+
+/* Active filter state */
+.tags button.active {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  color: white;
+  border-color: transparent;
+}
+.tags button.active::before { opacity: 0; }
+
+.tags button:focus-visible {
+  outline: var(--focus-ring-width, 2px) solid var(--focus-ring-color, var(--accent-purple));
+  outline-offset: var(--focus-ring-offset, 3px);
+}
 
 /* List */
 .projects-list { display: grid; gap: var(--spacing-xl); }
@@ -163,6 +182,10 @@
 .case-notes summary::-webkit-details-marker { display: none; }
 .case-notes summary::before { content: '▸'; display: inline-block; margin-inline-end: var(--spacing-xs); transition: transform var(--transition-base) ease; }
 .case-notes[open] summary::before { transform: rotate(90deg); }
+.case-notes summary:focus-visible {
+  outline: var(--focus-ring-width, 2px) solid var(--focus-ring-color, var(--accent-purple));
+  outline-offset: -2px;
+}
 .case-notes ul { padding: var(--spacing-md); margin: 0; background: var(--surface); }
 .case-notes ul li { color: var(--muted); font-size: var(--font-sm); }
 
@@ -211,6 +234,6 @@
   .projects-list { gap: var(--spacing-lg); }
   .project-card { padding: var(--spacing-md); gap: var(--spacing-md); }
   .project-number { inline-size: 3.5rem; block-size: 3.5rem; font-size: var(--font-xl); }
-  .spotlight, .extras { padding: var(--spacing/md); }
+  .spotlight, .extras { padding: var(--spacing-md); }
   .grid-cards { grid-template-columns: 1fr; }
 }

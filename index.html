@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nasser Al Nasser — Software Engineer portfolio showcasing web development projects, skills, and experience.">
   <title>Nasser Al Nasser — Portfolio</title>
   <link rel="icon" href="images/headshot.jpg" type="image/jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,95 +11,119 @@
   <link rel="stylesheet" href="/styles/theme.css">
   <link rel="stylesheet" href="/styles/nav.css">
   <link rel="stylesheet" href="/styles/home.css">
-  <script>/* placeholder */</script>
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nasser Al Nasser",
+    "jobTitle": "Software Engineer",
+    "url": "https://nasseralnasser.netlify.app",
+    "sameAs": [
+      "https://www.linkedin.com/in/nasser-al-nasser-886469338/"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "UC San Diego"
+    },
+    "knowsAbout": ["Web Development", "JavaScript", "TypeScript", "React", "Accessibility"]
+  }
+  </script>
 </head>
 
 <body class="frame">
-  <noscript>This site works without JavaScript.</noscript>
+  <!-- Skip Link for Keyboard Users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <noscript>This site works best with JavaScript enabled for enhanced features.</noscript>
 
   <!-- LEFT RAIL -->
   <aside class="rail rail--brand" aria-label="Brand">
     <a class="brand" href="index.html">
-      <img class="brand__logo" src="images/logo.png" alt="">
+      <img class="brand__logo" src="images/logo.png" alt="Nasser Al Nasser logo">
       <span class="brand__text">
         <span class="brand__name">NASSER AL NASSER</span>
         <span class="brand__role">SOFTWARE ENGINEER</span>
       </span>
     </a>
   </aside>
-<main class="content" id="main-content">
-  <header class="page-header">
-    <h1 class="hero-title">Nasser Al Nasser</h1>
-    <p class="hero-subtitle">Software Engineer · Product-minded · Based in San Diego</p>
-  </header>
 
-  <section class="intro-section" aria-labelledby="intro-title">
-    <h2 id="intro-title">I build reliable, fast web apps that people actually use.</h2>
-    <p class="intro-text">
-      UCSD-trained engineer with a background in competitive sports (former Olympic boxer for Iraq) and
-      a habit of turning weekend ideas into shipped tools. I care about clean UX, measurable impact, and shipping.
-      <br><span class="location">San Diego, CA · Open to SWE roles</span>
-    </p>
+  <main class="content" id="main-content">
+    <header class="page-header">
+      <h1 class="hero-title">Nasser Al Nasser</h1>
+      <p class="hero-subtitle">Software Engineer · Product-minded · Based in San Diego</p>
+    </header>
 
-    <div class="cta-row" role="group" aria-label="Primary actions">
-      <a class="btn-primary" href="images/resume.png" download>Download Resume</a>
-      <a class="btn-secondary" href="https://www.linkedin.com/in/nasser-al-nasser-886469338/">LinkedIn</a>
-    </div>
+    <section class="intro-section" aria-labelledby="intro-title">
+      <h2 id="intro-title">I build reliable, fast web apps that people actually use.</h2>
+      <p class="intro-text">
+        UCSD-trained engineer with a background in competitive sports (former Olympic boxer for Iraq) and
+        a habit of turning weekend ideas into shipped tools. I care about clean UX, measurable impact, and shipping.
+        <br><span class="location">San Diego, CA · Open to SWE roles</span>
+      </p>
 
-    <ul class="metrics-strip" aria-label="At-a-glance">
-      <li><strong>10+ </strong><span>projects shipped</span></li>
-      <li><strong>&lt;1.5s </strong><span>typical TTI goal</span></li>
-      <li><strong>3 </strong><span>focus areas: Web Performance, Maintainability, User Experience</span></li>
-    </ul>
-  </section>
+      <div class="cta-row" role="group" aria-label="Primary actions">
+        <a class="btn-primary" href="images/resume.png" download>Download Resume</a>
+        <a class="btn-secondary" href="https://www.linkedin.com/in/nasser-al-nasser-886469338/" rel="noopener noreferrer" target="_blank">
+          LinkedIn
+          <span class="visually-hidden">(opens in new tab)</span>
+        </a>
+      </div>
 
-  <section class="featured-section" aria-labelledby="featured-projects">
-    <h2 id="featured-projects">Featured Projects</h2>
-
-    <article class="highlights-card" aria-labelledby="hl1">
-      <h3 id="hl1">Marketplace Web App</h3>
-      <p class="project-tagline">A UCSD-exclusive marketplace with secure listings, fast search, and clean UX.</p>
-      <ul class="project-list">
-        <li>Role: Front-end lead · Auth, search, A11y components</li>
-        <li>Impact: Improved listing load experience to &lt;1.2s TTI, redesigned navigation flows, and built a polished, consistent UI component system — resulting in faster browsing and a noticeably smoother user experience.</li>
-        <li>Stack: Web Components, JS/TS, CSS</li>
+      <ul class="metrics-strip" aria-label="At-a-glance">
+        <li><strong>10+ </strong><span>projects shipped</span></li>
+        <li><strong>&lt;1.5s </strong><span>typical TTI goal</span></li>
+        <li><strong>3 </strong><span>focus areas: Web Performance, Maintainability, User Experience</span></li>
       </ul>
-      <p class="actions">
-        <a href="projects.html#p1" class="link-primary">Read case study</a>
-      </p>
-    </article>
+    </section>
 
-    <article class="project-card snapshot-card">
-  
-      <strong>Data-Leak Detection Algorithm</strong>
-      <p>Supervised model to flag risky patterns in code; built dataset, features, and baseline.</p>
-      <p class="actions">
-        <a href="projects.html#p2" class="link-primary">Details</a>
-      </p>
-   
-    </article>
+    <section class="featured-section" aria-labelledby="featured-projects">
+      <h2 id="featured-projects">Featured Projects</h2>
 
- <article class="project-card snapshot-card">
-      <strong>Automated Trading Bot</strong>
-      <p>Feature-engineered pipeline with paper trading and risk controls.</p>
-      <p class="actions">
-        <a href="projects.html#p3" class="link-primary">Details</a>
-      </p>
-     </article>
-  </section>
+      <article class="highlights-card" aria-labelledby="hl1">
+        <h3 id="hl1">Marketplace Web App</h3>
+        <p class="project-tagline">A UCSD-exclusive marketplace with secure listings, fast search, and clean UX.</p>
+        <ul class="project-list">
+          <li>Role: Front-end lead · Auth, search, A11y components</li>
+          <li>Impact: Improved listing load experience to &lt;1.2s TTI, redesigned navigation flows, and built a polished, consistent UI component system — resulting in faster browsing and a noticeably smoother user experience.</li>
+          <li>Stack: Web Components, JS/TS, CSS</li>
+        </ul>
+        <p class="actions">
+          <a href="projects.html#p1" class="link-primary">Read case study</a>
+        </p>
+      </article>
 
-  <footer class="page-footer">
-    <p>&copy; 2025 Nasser Al Nasser — <span><a href="contact.html">Get in touch</a></span></p>
-  </footer>
-</main>
+      <article class="project-card snapshot-card">
+        <strong>Data-Leak Detection Algorithm</strong>
+        <p>Supervised model to flag risky patterns in code; built dataset, features, and baseline.</p>
+        <p class="actions">
+          <a href="projects.html#p2" class="link-primary">Details</a>
+        </p>
+      </article>
 
+      <article class="project-card snapshot-card">
+        <strong>Automated Trading Bot</strong>
+        <p>Feature-engineered pipeline with paper trading and risk controls.</p>
+        <p class="actions">
+          <a href="projects.html#p3" class="link-primary">Details</a>
+        </p>
+      </article>
+    </section>
 
+    <footer class="page-footer">
+      <p>&copy; 2025 Nasser Al Nasser — <span><a href="contact.html">Get in touch</a></span></p>
+    </footer>
+  </main>
 
   <!-- Right Rail -->
   <nav class="rail rail--nav" aria-label="Primary">
     <!-- Theme toggle -->
-    <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">☀︎/☾</label>
-    <input hidden type="checkbox" id="theme-toggle" aria-label="Toggle light or dark theme">
+    <label class="theme-toggle" for="theme-toggle" title="Toggle light/dark">
+      <span aria-hidden="true">☀︎/☾</span>
+      <span class="visually-hidden">Toggle light or dark theme</span>
+    </label>
+    <input hidden type="checkbox" id="theme-toggle">
     
     <ul class="vnav">
       <li><a href="index.html" aria-current="page">Home</a></li>
@@ -108,5 +133,6 @@
     </ul>
   </nav>
 
+  <script src="/scripts/main.js" defer></script>
 </body>
 </html>
