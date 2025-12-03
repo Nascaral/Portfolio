@@ -2,8 +2,20 @@
 
 (function() {
   'use strict';
-
   const THEME_STORAGE_KEY = 'portfolio-theme-preference';
+
+  (function applyStoredTheme() {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme === 'light') {
+      // Add a style tag to force light mode before CSS loads
+      document.documentElement.style.setProperty('--bg', '#f8fafc');
+      document.documentElement.style.setProperty('--surface', '#ffffff');
+      document.documentElement.style.setProperty('--surface-elevated', '#f1f5f9');
+      document.documentElement.style.setProperty('--ink', '#0f172a');
+      document.documentElement.style.setProperty('--muted', '#64748b');
+      document.documentElement.style.setProperty('--border', 'color-mix(in oklab, #a78bfa, transparent 80%)');
+    }
+  })();
   
   function initThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
@@ -13,12 +25,31 @@
     const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
     if (savedTheme === 'light') {
       themeToggle.checked = true;
+    } else if (savedTheme === 'dark') {
+      themeToggle.checked = false;
     }
 
     // Save preference when toggled
     themeToggle.addEventListener('change', function() {
       const theme = this.checked ? 'light' : 'dark';
       localStorage.setItem(THEME_STORAGE_KEY, theme);
+      
+      // Apply theme immediately via CSS custom properties
+      if (theme === 'light') {
+        document.documentElement.style.setProperty('--bg', '#f8fafc');
+        document.documentElement.style.setProperty('--surface', '#ffffff');
+        document.documentElement.style.setProperty('--surface-elevated', '#f1f5f9');
+        document.documentElement.style.setProperty('--ink', '#0f172a');
+        document.documentElement.style.setProperty('--muted', '#64748b');
+        document.documentElement.style.setProperty('--border', 'color-mix(in oklab, #a78bfa, transparent 80%)');
+      } else {
+        document.documentElement.style.setProperty('--bg', '#0a0e27');
+        document.documentElement.style.setProperty('--surface', '#151938');
+        document.documentElement.style.setProperty('--surface-elevated', '#1e2447');
+        document.documentElement.style.setProperty('--ink', '#e7ebf1');
+        document.documentElement.style.setProperty('--muted', '#a0a8c5');
+        document.documentElement.style.setProperty('--border', 'color-mix(in oklab, #a78bfa, transparent 85%)');
+      }
     });
   }
 
@@ -63,16 +94,8 @@
     });
   }
 
-
+ 
   function initSmoothScroll() {
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-      // Disable smooth scroll behavior for users who prefer reduced motion
-      document.documentElement.style.scrollBehavior = 'auto';
-      return;
-    }
 
     // Handle anchor links for smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -178,7 +201,6 @@
 
 
   function initLazyAnimations() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
