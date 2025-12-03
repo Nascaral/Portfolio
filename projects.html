@@ -11,6 +11,23 @@
   <link rel="stylesheet" href="/styles/theme.css">
   <link rel="stylesheet" href="/styles/nav.css">
   <link rel="stylesheet" href="/styles/projects.css">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('portfolio-theme-preference');
+      if (theme === 'light') {
+        document.documentElement.style.setProperty('--bg', '#f8fafc');
+        document.documentElement.style.setProperty('--surface', '#ffffff');
+        document.documentElement.style.setProperty('--surface-elevated', '#f1f5f9');
+        document.documentElement.style.setProperty('--ink', '#0f172a');
+        document.documentElement.style.setProperty('--muted', '#64748b');
+        // Sync checkbox when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+          var toggle = document.getElementById('theme-toggle');
+          if (toggle) toggle.checked = true;
+        });
+      }
+    })();
+  </script>
 </head>
 
 <body class="frame">
